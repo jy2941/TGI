@@ -16,7 +16,8 @@ Community size is controlled by a penalty parameter λ ∈ [1, 2]: higher values
 ```
 TGI/
 ├── methods/          # Core detection and sorting algorithms
-└── visualization/    # Plotting functions for results
+├── visualization/    # Plotting functions for results
+└── simulation/       # Simulation scripts for benchmarking and validation
 ```
 
 ## Methods
@@ -50,6 +51,16 @@ TGI/
 | `plot3in1_v2.m` | Three-panel plot, alternate layout (extra panels bottom/left) |
 | `plot_all_result.m` | Plot all detected communities on the full or subsetted matrix |
 | `nice_ticks.m` | Helper to generate clean axis tick marks |
+
+## Simulation
+
+Scripts for generating synthetic data and benchmarking detection performance.
+
+| File | Description |
+|------|-------------|
+| `matrix_1_generate.m` | Generate synthetic population-level correlation matrix with planted communities |
+| `matrix_1_TGI.m` | Run TGI detection on simulated data and evaluate TPR/TNR across repeated samples |
+| `matrix_1_benmark.R` | R benchmark comparing TGI against alternative methods on the same simulated data |
 
 ## Usage
 
@@ -90,4 +101,5 @@ end
 ## Requirements
 
 - MATLAB (tested on R2023a and later)
-- No additional toolboxes required
+- R (for benchmark scripts)
+- No additional MATLAB toolboxes required
